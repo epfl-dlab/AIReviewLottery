@@ -67,11 +67,27 @@ analyses/
   -README.md
 ```
 
+We summarize the structure of each dataset:
+
+**data/submissions_iclr_2018_2024.csv**: This dataset contains all the information about papers submitted to ICLR from 2018 until 2024. 
 
 
-This project is based on three key datasets. We summarize the content of each dataset and provide information about them in the next section.  
+**| id | creation_date | year | title | abstract | pdf | keywords | authors | authorids |**
+- id: submission unique identifier
+- creation_date: date of the submission
+- year: Year of publication.
+- title: Title of the paper.
+- abstract: Summary of the paper's content.
+- pdf: Path to the PDF file of the paper.
+- keywords: Keywords related to the paper's content.
+- authors: Names of the authors.
+- authorids: Email addresses or other identifiers of the authors.
 
-* data/submissions_iclr_2018_2024.csv: This dataset contains all the information about papers submitted to ICLR from 2018 until 2024-
+
+
+
+
+
 * data/reviews_iclr_2018_2024.csv: This dataset contains all the information about reviews submitted to ICLR. In addition, it provides the AI-assisted and human labels. 
 
 
