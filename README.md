@@ -34,3 +34,26 @@ These three analysis and the results we obtained are illustrated in
 <img src="analyses/fig1.png" style="width:80%">
 </div>
 
+Our pipeline consists of the following steps phases: 
+*  We download papers and reviews from 2018-2024 from the [Openreview API](https://docs.openreview.net/getting-started/using-the-api). 
+* We label all reviews as either AI-assisted reviews or human written reviews using [GPTZero](https://gptzero.me/).
+* We use this data to run our three analysis.
+
+
+By following these steps we obtain the following statistics relative to the dataset we obtained:
+
+
+| Year | Reviews | Submissions | Acceptance | LLM reviews |
+|------|---------|-------------|------------|-------------|
+| 2018 | 2921    | 1007        | 36.0%      | 57          |
+| 2019 | 4734    | 1569        | 31.5%      | 95          |
+| 2020 | 7783    | 2593        | 26.5%      | 123         |
+| 2021 | 11488   | 3009        | 29.1%      | 216         |
+| 2022 | 13161   | 3422        | 32.0%      | 164         |
+| 2023 | 18575   | 4955        | 24.3%      | 176         |
+| 2024 | 28028   | 7404        | 30.5%      | 4887        |
+| Total| 86690   | 23959       | ---        | ---         |
+
+
+## 2. Dataset Description
+
