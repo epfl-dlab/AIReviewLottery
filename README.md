@@ -84,7 +84,7 @@ We summarize the structure of each dataset:
 - authorids: Email addresses or other identifiers of the authors.
 
 
-**data/reviews_iclr_2018_2024_annotated.csv**: This dataset contains all the information about reviews submitted as an evaluation of reviews at ICLR from 2018 until 2024. 
+**data/reviews_iclr_2018_2024.csv**: This dataset contains all the information about reviews submitted as an evaluation of reviews at ICLR from 2018 until 2024. 
 
 **| id | review_id| year | review | rating | confidence | ai | human | mixed | isAI |**
 
@@ -95,10 +95,46 @@ We summarize the structure of each dataset:
 - review: content of the paper
 - rating: score given by the reviewer to the submission
 - confidence: confidence of the reviewer in the score provided
+. 
+
+We  provide the dataset annotated accordingly to GPTZero (explanation below) **data/reviews_iclr_2018_2024.csv** which does provide the labels that we use for our analysis. Specifically, this dataset contains the following additional three columns
+
 - ai: likelihood of the review to be AI-assisted according to GPTZero.
 - mixed: likelihood of the review to be mixed (parts human and AI-assisted written) according to GPTZero.
-- isAI: if 1 == AI-assisted else human. 
+- isAI: if 1 == AI-assisted else human
 
 
+## 3. Environment Setup
+
+With the repository cloned, we recommend creating a new [conda](https://docs.conda.io/en/latest/) virtual environment:
+```bash
+conda env create -n aireviewlottery
+conda activate aireviewlottery
+```
+
+and install 
+
+```bash
+pip install -r pip_requirements.txt
+```
+
+## 4. Getting Started: Labeling data with GPTZero
+To obtain the datasets described above and run the analysis you can navigate to analyses/0_reviews_labeling. Then to start the labeling process you can simply run 
+
+```bash
+python gptzero_labelling.py --api_key "your_api_key"
+```
+
+This label it is easily customizable as it allows to subselect on the portion of the data you might want to label.
+For instance by setting the ``` bash filter ``` parameter to an integer value between 2018-2024 you can label only the reviews submitted in the specified year. 
 
 
+```bash
+python gptzero_labelling.py --api_key "your_api_key" --filter 2022
+```
+
+The script contains other parameters that allows to change the directories where data are stored. 
+Code is fully commented to provide easier understanding of the different steps. 
+
+
+## 5. Study 1: Prevalence Analysis
