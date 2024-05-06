@@ -34,13 +34,14 @@ These three analysis and the results we obtained are illustrated in
 <img src="analyses/fig1.png" style="width:80%">
 </div>
 
-Our pipeline consists of the following steps phases: 
-*  We download papers and reviews from 2018-2024 from the [Openreview API](https://docs.openreview.net/getting-started/using-the-api). 
+
+
+## 2. Data Collection and Dataset Description
+Our data collection process consists of two steps:
+*  We download papers, reviews, and acceptance decisions from 2018-2024 from the [Openreview API](https://docs.openreview.net/getting-started/using-the-api). 
 * We label all reviews as either AI-assisted reviews or human written reviews using [GPTZero](https://gptzero.me/).
-* We use this data to run our three analysis.
 
-
-By following these steps we obtain the following statistics relative to the dataset we obtained:
+By following these steps we obtain the following statistics relative to the datasets we obtained:
 
 
 | Year | Reviews | Submissions | Acceptance | LLM reviews |
@@ -55,5 +56,24 @@ By following these steps we obtain the following statistics relative to the data
 | Total| 86690   | 23959       | ---        | ---         |
 
 
-## 2. Dataset Description
+We structure this dataset in the following folder:
+
+```
+analyses/
+  -data/
+    - submissions_iclr_2018_2024.csv
+    - reviews_iclr_2018_2024_annotated.csv
+    - decisions_2024.csv
+  -README.md
+```
+
+
+
+This project is based on three key datasets. We summarize the content of each dataset and provide information about them in the next section.  
+
+* data/submissions_iclr_2018_2024.csv: This dataset contains all the information about papers submitted to ICLR from 2018 until 2024-
+* data/reviews_iclr_2018_2024.csv: This dataset contains all the information about reviews submitted to ICLR. In addition, it provides the AI-assisted and human labels. 
+
+
+### Submission Dataset
 
