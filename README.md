@@ -31,7 +31,7 @@ Journals and conferences worry that peer reviews assisted by artificial intellig
 These three analysis and the results we obtained are illustrated in 
 
 <div align="center">
-<img src="analyses/fig1.png" style="width:80%">
+<img src="analyses/README/fig1.png" style="width:80%">
 </div>
 
 
@@ -64,7 +64,7 @@ analyses/
     - submissions_iclr_2018_2024.csv
     - reviews_iclr_2018_2024_annotated.csv
     - decisions_2024.csv
-  -README.md
+README.md
 ```
 
 We summarize the structure of each dataset:
@@ -84,12 +84,21 @@ We summarize the structure of each dataset:
 - authorids: Email addresses or other identifiers of the authors.
 
 
+**data/reviews_iclr_2018_2024_annotated.csv**: This dataset contains all the information about reviews submitted as an evaluation of reviews at ICLR from 2018 until 2024. 
+
+**| id | review_id| year | review | rating | confidence | ai | human | mixed | isAI |**
+
+
+- id: submission unique identifier
+- review_id : review unique identifier
+- year: Year of publication.
+- review: content of the paper
+- rating: score given by the reviewer to the submission
+- confidence: confidence of the reviewer in the score provided
+- ai: likelihood of the review to be AI-assisted according to GPTZero.
+- mixed: likelihood of the review to be mixed (parts human and AI-assisted written) according to GPTZero.
+- isAI: if 1 == AI-assisted else human. 
 
 
 
-
-* data/reviews_iclr_2018_2024.csv: This dataset contains all the information about reviews submitted to ICLR. In addition, it provides the AI-assisted and human labels. 
-
-
-### Submission Dataset
 
